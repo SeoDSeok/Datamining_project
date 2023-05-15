@@ -26,5 +26,11 @@ ex) 기상특보(2011 ~ 2018), 기상상태(2019 ~ 2021) 같은 칼럼인데 칼
 또한 지점과 관할해경서를 이용하여 발생지점을 연결 시켜주고자 비슷한 위치를 발생지점으로 취급하기로 함.
 최종적으로 'key', '시간대별'. '지점'을 mapping key로 하여 데이터를 합침
 
+## 3. data preprocessing
+위에 data_collection_preprocessing 과 data_merge와 동시에 진행함
+
+## 4. EDA 
+EDA 파일 참조
+
 
 
