@@ -50,6 +50,8 @@ EDA 파일 참조
 task가 변경됨에 따라 추가적인 EDA를 진행 disploy과 countplot을 이용하여 분포 확인
 x로 설정한 것에 따라 분포가 다름을 확인할 수 있음
 
+*** 이 이후부터는 위에 첨부된 project_data5.csv를 가지고 진행함 ***
+
 
 
 
