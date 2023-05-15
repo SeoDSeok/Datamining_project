@@ -7,6 +7,7 @@
 https://www.data.go.kr/data/3043630/fileData.do
 
 ### 1_2 기상청 날씨데이터 <br>
+![download](https://github.com/SeoDSeok/Datamining_project/assets/122199258/f05763a8-5d51-4b31-baba-2d663718dbf1) <br>
 
 https://data.kma.go.kr/data/sea/selectBuoyRltmList.do?pgmNo=52
 ## 2. data merging <br>
