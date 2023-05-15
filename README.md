@@ -45,6 +45,7 @@ EDA 파일 참조
 
 5_2 : 오류를 하고 randomforest를 기반으로 모델링 후 분석 --> accuracy가 max 37%로 매우 낮음
 행정안전부 국가기록원 기준으로 발생원인을 5가지 calss로 변경후 5-class - classification으로 task를 변경!
+![image](https://github.com/SeoDSeok/Datamining_project/assets/122199258/9c44eb86-fdc9-42c6-8cb3-6e5ddb5157b5)
 
 ## 6. additional_EDA 
 task가 변경됨에 따라 추가적인 EDA를 진행 disploy과 countplot을 이용하여 분포 확인
