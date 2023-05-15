@@ -42,6 +42,7 @@ EDA 파일 참조
 
 ## 5. data analysis 
 5_1 : 범주형 one_hot encoding을 적용하지 않아서 발생한오류 
+
 5_2 : 오류를 하고 randomforest를 기반으로 모델링 후 분석 --> accuracy가 max 37%로 매우 낮음
 행정안전부 국가기록원 기준으로 발생원인을 5가지 calss로 변경후 5-class - classification으로 task를 변경!
 
