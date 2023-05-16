@@ -53,7 +53,46 @@ x로 설정한 것에 따라 분포가 다름을 확인할 수 있음
 
 *** 이 이후부터는 위에 첨부된 project_data5.csv를 가지고 진행함 ***
 
+## 7. Modeling
+여기서는 대표적으로 SVM과 RandomForest를 사용하여 분류를 진행해보았다. 
+dataset이 imbalance하여 stratify를 이용하여 dataset분할
+train_all : test = 8:2, train : val = 8:2로 진행
+7_1 SVM 
+알고리즘 자체가 하이퍼파라미터 튜닝과, scaling에 대해 민감하기 때문에 그 과정을 지키면서 수행하고자 하였다.
 
+      1. 전처리 과정에서는 MinMaxScaler를 이용하였는데 이는 범주형 변수가 이미 one-hot encoding으로 되어 있어 [0,1]에 값을 갖는 상황이기에 
+      2. 연속형 변수들도 이와 같은 boundary에 있도록 하기 위해 그렇게 진행하였다.
+      3. 대표적인 hyperparameter인 C, gamma를 활용하여 튜닝을 진행하였다.
+      4. C = 100, gamma = 0.01이 best라 판단하여 이 모델을 가지고 test set에 대한 성능을 측정하였다.
+      5. accuracy : 48.4%, f1_score : 34.8%, confusion_matrix는 아래 그림과 같다.
+ ![image](https://github.com/SeoDSeok/Datamining_project/assets/122199258/def26d36-ff92-4c85-99a5-7c61fbba3be8)
+      
+  여기서 label은 각각 '관리문제', '기상상태', '기타', '운항과실', '취급불량 및 결함'순
+      
+7_2 RandomForest
+앙상블 기반의 알고리즘으로 높은 성능을 기대하며 수행
+
+      1. 전처리과정이 특별히 필요없는 알고리즘이라 그대로 (scaling 조정)진행하지 않고 
+      2. 대표적인 hyperparameter인 n_estimator로 튜닝 진행  -> n_estimator가 증가할 수록 val_accuracy증가하다가 800에서 1000넘어갈 때 감소
+      3. 이에 n_estimator = 800으로 final model를 택하였다.
+      4. accuracy : 54.3%, f1_score : 47.79%, confusion_matrix는 아래 그림과 같다.
+      
+  ![image](https://github.com/SeoDSeok/Datamining_project/assets/122199258/bc6ba6d0-561a-45ed-9a73-ef5ea2515447)
+      
+   여기서 label은 각각 '관리문제', '기상상태', '기타', '운항과실', '취급불량 및 결함'순
+
+## 8. addtional_modeling
+kaggle에서도 높은 성능을 보이고 자주 사용한다는 Light GBM을 가지고 추가적인 실험 진행
+
+      1. randomForest와 같은 이유로 전처리를 진행하지 않음.
+      2. num_leaves(하나의 트리가 가질 수 있는 최대 리프 개수), (learning_rate : 부스팅스탭 반복할 때 학습률)를 가지고 하이퍼파라미터 튜닝 진행
+      3. learning_rate=0.003, num_leaves=25로 최종 결과 도출
+      4. accuracy : 45.3%, f1_score : 19.3%, confusion_matrix는 아래 그림과 같다.
+  ![image](https://github.com/SeoDSeok/Datamining_project/assets/122199258/87218c27-f56d-4c3a-ba3a-81137463f86f)
+      
+   여기서 label은 각각 '관리문제', '기상상태', '기타', '운항과실', '취급불량 및 결함'순
+      
+## 9. 실험결과에 대한 해석 (Post processing)
 
 
 
